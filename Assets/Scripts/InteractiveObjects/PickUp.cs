@@ -13,7 +13,9 @@ namespace Phantom
         public Vector3 vector;
         private Rigidbody rb;
         public static bool isPause;
-        private Vector3 originalVector;
+        private Vector3 originalVector_p;
+        private Vector3 originalVector_r;
+        private GameObject[] checkedObjects;
 
         //rotate object
         public int yMinLimit;
@@ -28,7 +30,10 @@ namespace Phantom
             rb = GetComponent<Rigidbody>();
             isPause = false;
             canRotate = false;
-            originalVector = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
+            originalVector_p = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
+            originalVector_r = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z);
+            //Debug.Log(originalVector_r);
+            checkedObjects = GameObject.FindGameObjectsWithTag("checkedItems");
         }
 
         public virtual void Update()
@@ -43,7 +48,7 @@ namespace Phantom
                 {
                     transform.parent = cameraTransform;
                     transform.localPosition = new Vector3(vector.x, vector.y, vector.z);
-                    transform.localRotation = Quaternion.Euler(-20, 0, 0);
+                    transform.localRotation = Quaternion.Euler(-20, 180, 0);
                     rb.isKinematic = true;
                     isPause = true;
                     canRotate = true;
@@ -52,9 +57,14 @@ namespace Phantom
                 {
                     isPause = false;
                     transform.parent = itemsTransform;
-                    transform.localPosition = new Vector3(originalVector.x, originalVector.y, originalVector.z);
-                    transform.localRotation = Quaternion.Euler(0, 0, 0);
+                    transform.localRotation = Quaternion.Euler(originalVector_r.x, originalVector_r.y, originalVector_r.z);
+                    transform.localPosition = new Vector3(originalVector_p.x, originalVector_p.y, originalVector_p.z);
                     canRotate = false;
+
+                    for (int i = 0; i < checkedObjects.Length; i++)
+                    {
+                        checkedObjects[i].GetComponent<PickUp>().enabled = false;
+                    }
                 }
             }
 

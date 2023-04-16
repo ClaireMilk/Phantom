@@ -64,7 +64,6 @@ namespace Phantom
         {
             transform.parent = cameraTransform;
             transform.localPosition = new Vector3(vector.x, vector.y, vector.z);
-            transform.localRotation = Quaternion.Euler(-20, 0, 0);
             isPause = true;
         }
 

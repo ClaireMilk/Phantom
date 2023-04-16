@@ -7,6 +7,9 @@ TagManager:
   - checkedItems
   - inventory
   - Watch
+  - Drawer
+  - CabinetDoor
+  - CabinetDoor_R
   layers:
   - Default
   - TransparentFX

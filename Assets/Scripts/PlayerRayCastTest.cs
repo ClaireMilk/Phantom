@@ -13,6 +13,9 @@ namespace Phantom
         public static bool canPickup;
         public static bool canPickupWatch;
 
+        //open furnitures
+        public static bool openDrawer;
+
         private void Awake()
         {
             pickHint.enabled = false;
@@ -36,14 +39,26 @@ namespace Phantom
             RaycastHit hit;
             float trueRayDistance; //when checked items, ray distance will change
 
-            if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.CompareTag("checkedItems"))
-                canPickup = true;
-            else if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.CompareTag("Watch"))
-                canPickupWatch = true;
-            else
+            if (Physics.Raycast(ray, out hit, rayDistance))
             {
-                canPickup = false;
-                canPickupWatch = false;
+                if (hit.collider.gameObject.CompareTag("checkedItems"))
+                {
+                    canPickup = true;
+                    hit.collider.gameObject.GetComponent<PickUp>().enabled = true;
+                }
+                else if (hit.collider.gameObject.CompareTag("Watch"))
+                    canPickupWatch = true;
+                else if (hit.collider.gameObject.CompareTag("Drawer"))
+                    openDrawer = true;
+                else
+                {
+                    canPickup = false;
+                    canPickupWatch = false;
+                    //for (int i = 0; i < checkedObjects.Length; i++)
+                    //{
+                    //    checkedObjects[i].GetComponent<PickUp>().enabled = false;
+                    //}
+                }
             }
 
             if (hit.collider == null)
