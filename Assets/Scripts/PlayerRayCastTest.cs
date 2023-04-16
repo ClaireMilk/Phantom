@@ -11,10 +11,11 @@ namespace Phantom
         public Color rayColor = Color.red;
         public Text pickHint;
         public static bool canPickup;
+        public static bool canPickupWatch;
 
-        void Start()
+        private void Awake()
         {
-
+            pickHint.enabled = false;
         }
 
         // Update is called once per frame
@@ -22,11 +23,10 @@ namespace Phantom
         {
             LookAtRay();
 
-            bool getWatch = GetWatch.getWatch;
-            if (getWatch)
+            if (GameObject.FindGameObjectWithTag("Watch") == null)
+            {
                 pickHint.enabled = canPickup;
-            else
-                pickHint.enabled = false;
+            }
         }
 
         private void LookAtRay()
@@ -39,11 +39,14 @@ namespace Phantom
             if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.CompareTag("checkedItems"))
                 canPickup = true;
             else if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.CompareTag("Watch"))
-                canPickup = true;
+                canPickupWatch = true;
             else
+            {
                 canPickup = false;
+                canPickupWatch = false;
+            }
 
-            if(hit.collider == null)
+            if (hit.collider == null)
             {
                 trueRayDistance = rayDistance;
             }

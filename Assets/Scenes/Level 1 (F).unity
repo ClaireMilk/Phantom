@@ -4441,7 +4441,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 33.35
+  m_Radius: 43.29
   m_Center: {x: 0.00034295302, y: 18.591433, z: -0.0000000058432263}
 --- !u!114 &1207364060
 MonoBehaviour:
@@ -5651,7 +5651,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &1564892029
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5757,8 +5757,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.6
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.1833268
+  m_Center: {x: 9.096049e-18, y: -0.41667318, z: 1.0385761e-15}
 --- !u!114 &1564892035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5773,7 +5773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 1478784658}
   itemsTransform: {fileID: 266804351}
-  vector: {x: 0, y: 0.37, z: 2.48}
+  vector: {x: 0, y: 0.87, z: 2.48}
   yMinLimit: -20
   yMaxLimit: 120
   xSpeed: 200

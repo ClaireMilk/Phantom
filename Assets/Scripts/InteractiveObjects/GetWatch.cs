@@ -23,7 +23,7 @@ namespace Phantom
 
         public override void Update()
         {
-            bool canPickup = PlayerRayCastTest.canPickup;
+            bool canPickup = PlayerRayCastTest.canPickupWatch;
 
             if (Input.GetKeyDown(KeyCode.E) && canPickup)
                 i++;
@@ -46,12 +46,18 @@ namespace Phantom
                 case 2:
                     stepTwo.enabled = false;
                     leftHandUI.SetActive(true);
-                    getWatch = true;
                     Destroy(gameObject);
+                    isPause = false;
                     break;
                 default:
                     break;
             }
+        }
+
+        public void LateUpdate()
+        {
+            if(i == 2)
+                getWatch = true;
         }
 
         public void StepTwo()
