@@ -6,6 +6,7 @@ TagManager:
   tags:
   - checkedItems
   - inventory
+  - Watch
   layers:
   - Default
   - TransparentFX

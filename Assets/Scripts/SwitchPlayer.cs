@@ -9,7 +9,6 @@ namespace Phantom
         public GameObject player1;
         public GameObject player2;
         private bool b1 = true, b2 = true;
-        [HideInInspector]
         public static bool inRealWorld;
         public float delayTime;
         private bool isAnim = false;

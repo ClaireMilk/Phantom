@@ -20,34 +20,31 @@ namespace Phantom
         public int yMaxLimit;
         public float xSpeed;
         public float ySpeed;
-        private float x, y;
+        protected float x, y;
         private bool canRotate;
 
-        private void Awake()
+        public virtual void Awake()
         {
             rb = GetComponent<Rigidbody>();
-        }
-
-        void Start()
-        {
             isPause = false;
             canRotate = false;
             originalVector = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
         }
 
-        void Update()
+        public virtual void Update()
         {
             //if player is closed to the interactive items and look at it, can pickup it to check details
             bool canPickup = PlayerRayCastTest.canPickup;
+            bool getWatch = GetWatch.getWatch;
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && getWatch)
             {
                 //Debug.Log(canPickup);
                 if (canPickup && !canRotate)
                 {
                     transform.parent = cameraTransform;
                     transform.localPosition = new Vector3(vector.x, vector.y, vector.z);
-                    transform.localRotation = Quaternion.Euler(-10, 0, 0);
+                    transform.localRotation = Quaternion.Euler(-20, 0, 0);
                     rb.isKinematic = true;
                     isPause = true;
                     canRotate = true;

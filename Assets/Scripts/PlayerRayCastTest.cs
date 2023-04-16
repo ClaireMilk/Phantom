@@ -21,7 +21,12 @@ namespace Phantom
         void Update()
         {
             LookAtRay();
-            pickHint.enabled = canPickup;
+
+            bool getWatch = GetWatch.getWatch;
+            if (getWatch)
+                pickHint.enabled = canPickup;
+            else
+                pickHint.enabled = false;
         }
 
         private void LookAtRay()
@@ -31,14 +36,12 @@ namespace Phantom
             RaycastHit hit;
             float trueRayDistance; //when checked items, ray distance will change
 
-            if(Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.CompareTag("checkedItems"))
-            {
+            if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.CompareTag("checkedItems"))
                 canPickup = true;
-            }
+            else if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.CompareTag("Watch"))
+                canPickup = true;
             else
-            {
                 canPickup = false;
-            }
 
             if(hit.collider == null)
             {

@@ -133,7 +133,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""142fd87f-441c-4bc5-b5b6-6720ab1b04fc"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
