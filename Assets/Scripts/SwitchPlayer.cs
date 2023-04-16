@@ -9,6 +9,8 @@ namespace Phantom
         public GameObject player1;
         public GameObject player2;
         private bool b1 = true, b2 = true;
+        [HideInInspector]
+        public static bool inRealWorld;
         public float delayTime;
         private bool isAnim = false;
         private Animator anim;
@@ -18,6 +20,7 @@ namespace Phantom
             player1.SetActive(b1);
             player2.SetActive(!b1);
             anim = GetComponent<Animator>();
+            inRealWorld = true;
         }
 
         void Update()
@@ -28,6 +31,7 @@ namespace Phantom
                 isAnim = true;
                 b2 = !b2;
                 Invoke("SwitchScene", delayTime);
+                inRealWorld = !inRealWorld;
             }
         }
 

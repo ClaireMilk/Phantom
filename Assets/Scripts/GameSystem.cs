@@ -8,9 +8,12 @@ namespace Phantom
 {
     public class GameSystem : MonoBehaviour
     {
+        public static int currentPlayingScene;
+
         void Start()
         {
             Cursor.lockState = CursorLockMode.Locked;
+            currentPlayingScene = 1;
         }
 
         // Update is called once per frame
