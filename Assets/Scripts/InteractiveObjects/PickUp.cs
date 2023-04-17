@@ -38,8 +38,9 @@ namespace Phantom
         {
             //if player is closed to the interactive items and look at it, can pickup it to check details
             bool canPickup = PlayerRayCastTest.canPickup;
+            bool getWatch = GetWatch.getWatch;
 
-            if (Input.GetKeyDown(KeyCode.E) && GameObject.FindGameObjectWithTag("Watch") == null)
+            if (Input.GetKeyDown(KeyCode.E) && getWatch)
             {
                 //Debug.Log(canPickup);
                 if (canPickup && !canRotate)

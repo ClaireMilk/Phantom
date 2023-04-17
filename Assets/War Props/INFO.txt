@@ -1,0 +1,7 @@
+The package contains a collection of 26 Props to Create your own military environment.
+
+INFO
+Max-Texture Resulution: 2048px
+Max-Vertices: 6.500 Vert(1.000 Vert on Average per Object)
+Materils: All materials use Unity's Build-in shaders
+Coliders: All ojects have mesh coliders

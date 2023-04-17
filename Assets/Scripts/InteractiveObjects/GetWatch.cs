@@ -11,6 +11,7 @@ namespace Phantom
         public Text stepOne;
         public Text stepTwo;
         public GameObject leftHandUI;
+        private bool startTakeWatch;
         public static bool getWatch;
 
         public override void Awake()
@@ -18,6 +19,7 @@ namespace Phantom
             stepOne.enabled = false;
             stepTwo.enabled = false;
             leftHandUI.SetActive(false);
+            startTakeWatch = true;
             getWatch = false;
         }
 
@@ -33,31 +35,30 @@ namespace Phantom
                 stepOne.enabled = false;
 
             //let player hold the watch
-            switch (i)
+            if (startTakeWatch)
             {
-                case 0:
-                    break;
-                case 1:
-                    stepOne.enabled = false;
-                    stepTwo.enabled = true;
-                    StepTwo();
-                    MouseControlObjectRotation();
-                    break;
-                case 2:
-                    stepTwo.enabled = false;
-                    leftHandUI.SetActive(true);
-                    Destroy(gameObject);
-                    isPause = false;
-                    break;
-                default:
-                    break;
+                switch (i)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        stepOne.enabled = false;
+                        stepTwo.enabled = true;
+                        StepTwo();
+                        MouseControlObjectRotation();
+                        break;
+                    case 2:
+                        stepTwo.enabled = false;
+                        leftHandUI.SetActive(true);
+                        Destroy(gameObject);
+                        isPause = false;
+                        getWatch = true;
+                        startTakeWatch = false;
+                        break;
+                    default:
+                        break;
+                }
             }
-        }
-
-        public void LateUpdate()
-        {
-            if(i == 2)
-                getWatch = true;
         }
 
         public void StepTwo()

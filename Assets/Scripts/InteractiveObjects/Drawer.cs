@@ -13,8 +13,9 @@ namespace Phantom
         void Update()
         {
             bool isSeeing = PlayerRayCastTest.canOpenDrawer;
+            bool getWatch = GetWatch.getWatch;
 
-            if (Input.GetKeyDown(KeyCode.E) && GameObject.FindGameObjectWithTag("Watch") == null)
+            if (Input.GetKeyDown(KeyCode.E) && getWatch)
             {
                 if (isSeeing && closed)
                 {
@@ -27,6 +28,11 @@ namespace Phantom
                     closed = true;
                 }
             }
+
+        }
+
+        void DrawerOpen()
+        {
 
         }
     }

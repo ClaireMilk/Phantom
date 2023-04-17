@@ -39,12 +39,10 @@ namespace Phantom
         public static bool canOpenCabinetDoor_R;
 
         // UI control
-        public Text pickHint;
         public Text noramaltHint;
 
         private void Awake()
         {
-            pickHint.enabled = false;
             noramaltHint.enabled = false;
         }
 
@@ -56,6 +54,7 @@ namespace Phantom
 
         private void LookAtRay()
         {
+            bool getWatch = GetWatch.getWatch;
             bool isChecking = PickUp.canRotate;
 
             //create a ray from camera
@@ -92,7 +91,7 @@ namespace Phantom
                     canOpenCabinetDoor_R = true;
                     canOpenCabinetDoor = false;
                     cabinetName = hit.collider.gameObject.name;
-                    hit.collider.gameObject.GetComponent<CabinetDoorRight>().enabled = true;
+                    hit.collider.gameObject.GetComponent<CabinetDoor>().enabled = true;
                 }
                 else
                 {
@@ -112,12 +111,12 @@ namespace Phantom
                     }
                 }
 
-                if (GameObject.FindGameObjectWithTag("Watch") == null)
+                if (getWatch)
                 {
-                    if (canPickup || isChecking)
-                        pickHint.enabled = true;
-                    else
-                        pickHint.enabled = false;
+                    //if (canPickup || isChecking)
+                    //    pickHint.enabled = true;
+                    //else
+                    //    pickHint.enabled = false;
 
                     if (canOpenCabinetDoor || canOpenCabinetDoor_R)
                         noramaltHint.enabled = true;
@@ -126,19 +125,22 @@ namespace Phantom
                     else
                         noramaltHint.enabled = false;
 
-                    try
+
+                    if (cabinetName != null && hit.collider.gameObject.tag != "CabinetDoor")
                     {
-                        if (cabinetName != null && hit.collider.gameObject.tag != "CabinetDoor")
-                            GameObject.Find(cabinetName).GetComponent<CabinetDoor>().enabled = false;
-                        else if (cabinetName != null && hit.collider.gameObject.tag != "CabinetDoor_R")
-                            GameObject.Find(cabinetName).GetComponent<CabinetDoorRight>().enabled = false;
+                        GameObject[] cabinetDoor = GameObject.FindGameObjectsWithTag("CabinetDoor");
+                        for (int i = 0; i < cabinetDoor.Length; i++)
+                        {
+                            cabinetDoor[i].GetComponent<CabinetDoor>().enabled = false;
+                        }
                     }
-                    catch
+                    else if (cabinetName != null && hit.collider.gameObject.tag != "CabinetDoor_R")
                     {
-                        System.Reflection.Assembly assembly = System.Reflection.Assembly.GetAssembly(typeof(UnityEditor.SceneView));
-                        System.Type logEntries = assembly.GetType("UnityEditor.LogEntries");
-                        System.Reflection.MethodInfo clearConsoleMethod = logEntries.GetMethod("Clear");
-                        clearConsoleMethod.Invoke(new object(), null);
+                        GameObject[] cabinetDoor = GameObject.FindGameObjectsWithTag("CabinetDoor_R");
+                        for (int i = 0; i < cabinetDoor.Length; i++)
+                        {
+                            cabinetDoor[i].GetComponent<CabinetDoor>().enabled = false;
+                        }
                     }
                 }
             }
