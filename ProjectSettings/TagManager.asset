@@ -4,13 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - checkedItems
-  - inventory
   - Watch
   - Drawer
   - CabinetDoor
   - Light
   - CabinetDoor_R
+  - CheckedItems
   layers:
   - Default
   - TransparentFX

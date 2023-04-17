@@ -5,6 +5,25 @@ using UnityEngine.UI;
 
 namespace Phantom
 {
+    //enum InteractiveType
+    //{
+    //    Watch,
+
+    //    OtherItems,
+
+    //    Files,
+
+    //    DoorLeft,
+
+    //    DoorRight,
+
+    //    DoorLocked,
+
+    //    Drawer,
+
+    //    Light
+    //}
+
     public class PlayerRayCastTest : MonoBehaviour
     {
         public float rayDistance;
@@ -21,12 +40,12 @@ namespace Phantom
 
         // UI control
         public Text pickHint;
-        public Text cabinetHint;
+        public Text noramaltHint;
 
         private void Awake()
         {
             pickHint.enabled = false;
-            cabinetHint.enabled = false;
+            noramaltHint.enabled = false;
         }
 
         // Update is called once per frame
@@ -47,7 +66,7 @@ namespace Phantom
             if (Physics.Raycast(ray, out hit, rayDistance))
             {
                 // ray hit normal items
-                if (hit.collider.gameObject.tag == "checkedItems")
+                if (hit.collider.gameObject.tag == "CheckedItems")
                 {
                     canPickup = true;
                     hit.collider.gameObject.GetComponent<PickUp>().enabled = true;
@@ -87,7 +106,7 @@ namespace Phantom
                 
                 if (currentObjectName != null && !isChecking)
                 {
-                    if(hit.collider.gameObject.tag != "checkedItems")
+                    if(hit.collider.gameObject.tag != "CheckedItems")
                     {
                         GameObject.Find(currentObjectName).GetComponent<PickUp>().enabled = false;
                     }
@@ -101,9 +120,11 @@ namespace Phantom
                         pickHint.enabled = false;
 
                     if (canOpenCabinetDoor || canOpenCabinetDoor_R)
-                        cabinetHint.enabled = true;
+                        noramaltHint.enabled = true;
+                    else if (canOpenDrawer)
+                        noramaltHint.enabled = true;
                     else
-                        cabinetHint.enabled = false;
+                        noramaltHint.enabled = false;
 
                     try
                     {
