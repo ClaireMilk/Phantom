@@ -9,6 +9,7 @@ TagManager:
   - Watch
   - Drawer
   - CabinetDoor
+  - Light
   - CabinetDoor_R
   layers:
   - Default

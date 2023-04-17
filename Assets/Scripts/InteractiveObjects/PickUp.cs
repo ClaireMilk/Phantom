@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace Phantom
 {
@@ -15,7 +16,6 @@ namespace Phantom
         public static bool isPause;
         private Vector3 originalVector_p;
         private Vector3 originalVector_r;
-        private GameObject[] checkedObjects;
 
         //rotate object
         public int yMinLimit;
@@ -23,7 +23,7 @@ namespace Phantom
         public float xSpeed;
         public float ySpeed;
         protected float x, y;
-        private bool canRotate;
+        public static bool canRotate;
 
         public virtual void Awake()
         {
@@ -32,8 +32,6 @@ namespace Phantom
             canRotate = false;
             originalVector_p = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
             originalVector_r = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z);
-            //Debug.Log(originalVector_r);
-            checkedObjects = GameObject.FindGameObjectsWithTag("checkedItems");
         }
 
         public virtual void Update()
@@ -60,11 +58,6 @@ namespace Phantom
                     transform.localRotation = Quaternion.Euler(originalVector_r.x, originalVector_r.y, originalVector_r.z);
                     transform.localPosition = new Vector3(originalVector_p.x, originalVector_p.y, originalVector_p.z);
                     canRotate = false;
-
-                    for (int i = 0; i < checkedObjects.Length; i++)
-                    {
-                        checkedObjects[i].GetComponent<PickUp>().enabled = false;
-                    }
                 }
             }
 

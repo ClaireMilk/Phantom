@@ -9,31 +9,36 @@ namespace Phantom
     {
         public float rayDistance;
         public Color rayColor = Color.red;
-        public Text pickHint;
         public static bool canPickup;
         public static bool canPickupWatch;
+        private string currentObjectName;
+        private string cabinetName;
 
         //open furnitures
-        public static bool openDrawer;
+        public static bool canOpenDrawer;
+        public static bool canOpenCabinetDoor;
+        public static bool canOpenCabinetDoor_R;
+
+        // UI control
+        public Text pickHint;
+        public Text cabinetHint;
 
         private void Awake()
         {
             pickHint.enabled = false;
+            cabinetHint.enabled = false;
         }
 
         // Update is called once per frame
         void Update()
         {
             LookAtRay();
-
-            if (GameObject.FindGameObjectWithTag("Watch") == null)
-            {
-                pickHint.enabled = canPickup;
-            }
         }
 
         private void LookAtRay()
         {
+            bool isChecking = PickUp.canRotate;
+
             //create a ray from camera
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
@@ -41,23 +46,79 @@ namespace Phantom
 
             if (Physics.Raycast(ray, out hit, rayDistance))
             {
-                if (hit.collider.gameObject.CompareTag("checkedItems"))
+                // ray hit normal items
+                if (hit.collider.gameObject.tag == "checkedItems")
                 {
                     canPickup = true;
                     hit.collider.gameObject.GetComponent<PickUp>().enabled = true;
+                    currentObjectName = hit.collider.gameObject.name;
                 }
-                else if (hit.collider.gameObject.CompareTag("Watch"))
+                else if (hit.collider.gameObject.tag == "Watch") // ray hit watch
                     canPickupWatch = true;
-                else if (hit.collider.gameObject.CompareTag("Drawer"))
-                    openDrawer = true;
+                // ray hit drawers
+                else if (hit.collider.gameObject.tag == "Drawer")
+                {
+                    canOpenDrawer = true;
+                }
+                // ray hit cabinet door
+                else if(hit.collider.gameObject.tag == "CabinetDoor")
+                {
+                    canOpenCabinetDoor = true;
+                    canOpenCabinetDoor_R = false;
+                    cabinetName = hit.collider.gameObject.name;
+                    hit.collider.gameObject.GetComponent<CabinetDoor>().enabled = true;
+                }
+                else if(hit.collider.gameObject.tag == "CabinetDoor_R")
+                {
+                    canOpenCabinetDoor_R = true;
+                    canOpenCabinetDoor = false;
+                    cabinetName = hit.collider.gameObject.name;
+                    hit.collider.gameObject.GetComponent<CabinetDoorRight>().enabled = true;
+                }
                 else
                 {
                     canPickup = false;
                     canPickupWatch = false;
-                    //for (int i = 0; i < checkedObjects.Length; i++)
-                    //{
-                    //    checkedObjects[i].GetComponent<PickUp>().enabled = false;
-                    //}
+                    canOpenDrawer = false;
+                    canOpenCabinetDoor = false;
+                    canOpenCabinetDoor_R = false;
+                    cabinetName = null;
+                }
+                
+                if (currentObjectName != null && !isChecking)
+                {
+                    if(hit.collider.gameObject.tag != "checkedItems")
+                    {
+                        GameObject.Find(currentObjectName).GetComponent<PickUp>().enabled = false;
+                    }
+                }
+
+                if (GameObject.FindGameObjectWithTag("Watch") == null)
+                {
+                    if (canPickup || isChecking)
+                        pickHint.enabled = true;
+                    else
+                        pickHint.enabled = false;
+
+                    if (canOpenCabinetDoor || canOpenCabinetDoor_R)
+                        cabinetHint.enabled = true;
+                    else
+                        cabinetHint.enabled = false;
+
+                    try
+                    {
+                        if (cabinetName != null && hit.collider.gameObject.tag != "CabinetDoor")
+                            GameObject.Find(cabinetName).GetComponent<CabinetDoor>().enabled = false;
+                        else if (cabinetName != null && hit.collider.gameObject.tag != "CabinetDoor_R")
+                            GameObject.Find(cabinetName).GetComponent<CabinetDoorRight>().enabled = false;
+                    }
+                    catch
+                    {
+                        System.Reflection.Assembly assembly = System.Reflection.Assembly.GetAssembly(typeof(UnityEditor.SceneView));
+                        System.Type logEntries = assembly.GetType("UnityEditor.LogEntries");
+                        System.Reflection.MethodInfo clearConsoleMethod = logEntries.GetMethod("Clear");
+                        clearConsoleMethod.Invoke(new object(), null);
+                    }
                 }
             }
 
