@@ -13,6 +13,8 @@ namespace Phantom
         public GameObject leftHandUI;
         private bool startTakeWatch;
         public static bool getWatch;
+        private Vector3 originalPosition;
+        public Transform world;
 
         public override void Awake()
         {
@@ -21,6 +23,8 @@ namespace Phantom
             leftHandUI.SetActive(false);
             startTakeWatch = true;
             getWatch = false;
+            originalPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
+            Debug.Log(originalPosition);
         }
 
         public override void Update()
@@ -50,10 +54,14 @@ namespace Phantom
                     case 2:
                         stepTwo.enabled = false;
                         leftHandUI.SetActive(true);
-                        Destroy(gameObject);
+                        transform.parent = world;
+                        transform.localRotation = Quaternion.Euler(-90, 0, 0);
+                        transform.localPosition = originalPosition;
+                        Debug.Log(transform.localPosition);
                         isPause = false;
                         getWatch = true;
                         startTakeWatch = false;
+                        Invoke("TakeWatch", 1.1f);
                         break;
                     default:
                         break;
@@ -88,6 +96,11 @@ namespace Phantom
             if (angle > 360)
                 angle -= 360;
             return Mathf.Clamp(angle, min, max);
+        }
+
+        void TakeWatch()
+        {
+            Destroy(gameObject);
         }
     }
 }
