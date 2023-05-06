@@ -7,12 +7,14 @@ public class WakeUpCameraControl : MonoBehaviour
 {
     private CinemachineBrain cinemachine;
     public float endTime;
-    public GameObject player;
+    public Transform player1;
+    private Vector3 original;
 
     // Start is called before the first frame update
     void Awake()
     {
         cinemachine = GetComponent<CinemachineBrain>();
+        original = new Vector3(player1.position.x, player1.position.y, player1.position.z);
         Invoke("CloseCinemachine", endTime);
     }
 
@@ -25,8 +27,6 @@ public class WakeUpCameraControl : MonoBehaviour
     private void CloseCinemachine()
     {
         cinemachine.enabled = false;
-        transform.localPosition = new Vector3(-0.46f, 4.57f, 0.06f);
-        player.transform.localPosition = new Vector3(10.14f, 14f, 16.24f);
-        player.transform.localRotation = Quaternion.Euler(0, 130, 0);
+        player1.position = new Vector3(original.x, original.y, original.z);
     }
 }
