@@ -26,7 +26,9 @@ public class WakeUpCameraControl : MonoBehaviour
 
     private void CloseCinemachine()
     {
-        cinemachine.enabled = false;
         player1.position = new Vector3(original.x, original.y, original.z);
+        transform.localPosition = new Vector3(0, 4, 0);
+        transform.localRotation = Quaternion.Euler(5, 0, 0);
+        cinemachine.enabled = false;
     }
 }

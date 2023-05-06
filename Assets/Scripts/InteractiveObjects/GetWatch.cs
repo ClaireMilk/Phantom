@@ -24,7 +24,6 @@ namespace Phantom
             startTakeWatch = true;
             getWatch = false;
             originalPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
-            Debug.Log(originalPosition);
         }
 
         public override void Update()
