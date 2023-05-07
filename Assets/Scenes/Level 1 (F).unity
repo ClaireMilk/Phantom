@@ -1566,7 +1566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 070b454ea76082e489c4efc83955fa73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endTime: 20
+  endTime: 1
   player1: {fileID: 6536941728816332858}
   openEyeUI: {fileID: 1763704535}
 --- !u!1 &266804350
@@ -3366,7 +3366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &569939512
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6307,6 +6307,7 @@ GameObject:
   - component: {fileID: 1004979221}
   - component: {fileID: 1004979220}
   - component: {fileID: 1004979219}
+  - component: {fileID: 1004979223}
   m_Layer: 5
   m_Name: New WatchUI
   m_TagString: Untagged
@@ -6407,6 +6408,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004979217}
   m_CullTransparentMesh: 1
+--- !u!114 &1004979223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004979217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af9e2a47275a5645a6e46fd5a942278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flyAnim: {fileID: 569939511}
 --- !u!1 &1008082312
 GameObject:
   m_ObjectHideFlags: 0
