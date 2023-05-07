@@ -5,25 +5,6 @@ using UnityEngine.UI;
 
 namespace Phantom
 {
-    //enum InteractiveType
-    //{
-    //    Watch,
-
-    //    OtherItems,
-
-    //    Files,
-
-    //    DoorLeft,
-
-    //    DoorRight,
-
-    //    DoorLocked,
-
-    //    Drawer,
-
-    //    Light
-    //}
-
     public class PlayerRayCastTest : MonoBehaviour
     {
         public float rayDistance;
