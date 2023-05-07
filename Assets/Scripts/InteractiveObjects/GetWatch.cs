@@ -51,6 +51,7 @@ namespace Phantom
                         MouseControlObjectRotation();
                         break;
                     case 2:
+                        stepOne.enabled = false;
                         stepTwo.enabled = false;
                         leftHandUI.SetActive(true);
                         transform.parent = world;
@@ -99,6 +100,7 @@ namespace Phantom
         void TakeWatch()
         {
             Destroy(gameObject);
+            Destroy(stepOne);
         }
     }
 }

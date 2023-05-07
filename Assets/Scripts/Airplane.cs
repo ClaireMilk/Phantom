@@ -7,7 +7,9 @@ namespace Phantom
     public class Airplane : MonoBehaviour
     {
         public GameObject flyAnim;
-        public GameObject hintUI;
+        public GameObject anotherCamera;
+        public GameObject airRaidDestroy;
+        public GameObject blackUI;
 
         public void AirplaneFly(int flyEvent)
         {
@@ -15,17 +17,27 @@ namespace Phantom
             {
                 flyAnim.SetActive(true);
             }
-            if(flyEvent == -1)
+            if (flyEvent == 2)
             {
-                hintUI.SetActive(false);
+                anotherCamera.SetActive(true);
             }
         }
 
+        public void Explode(int flyEvent)
+        {
+            if(flyEvent == 1)
+            {
+                blackUI.SetActive(true);
+                Destroy(anotherCamera);
+                Destroy(airRaidDestroy);
+            }
+        }
         public void PlaneDisappear(int flyEvent)
         {
-            if (flyEvent == 1)
+            if (flyEvent == 3)
             {
-                flyAnim.SetActive(false);
+                Destroy(blackUI);
+                Destroy(flyAnim);
             }
         }
     }
