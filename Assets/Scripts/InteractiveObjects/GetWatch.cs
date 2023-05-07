@@ -23,7 +23,7 @@ namespace Phantom
             leftHandUI.SetActive(false);
             startTakeWatch = true;
             getWatch = false;
-            originalPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
+            originalPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
 
         public override void Update()
@@ -55,8 +55,7 @@ namespace Phantom
                         leftHandUI.SetActive(true);
                         transform.parent = world;
                         transform.localRotation = Quaternion.Euler(-90, 0, 0);
-                        transform.localPosition = originalPosition;
-                        Debug.Log(transform.localPosition);
+                        transform.position = originalPosition;
                         isPause = false;
                         getWatch = true;
                         startTakeWatch = false;
