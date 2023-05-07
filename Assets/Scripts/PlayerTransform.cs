@@ -6,30 +6,19 @@ namespace Phantom
 {
     public class PlayerTransform : MonoBehaviour
     {
-        private bool inRealWorld;
-        private Vector3 currentPosition;
+        public GameObject camera2;
+        public Transform player1;
+        public Transform player2;
 
-        SwitchPlayer switchPlayer = new SwitchPlayer();
-
-        void Update()
+        private void Update()
         {
-            inRealWorld = DetectPlayer(switchPlayer.player1);
-            if (inRealWorld)
+            if(!camera2.activeInHierarchy)
             {
-                currentPosition = new Vector3(switchPlayer.player1.transform.position.x, switchPlayer.player1.transform.position.y,
-                    switchPlayer.player1.transform.position.z);
+                player2.transform.position = new Vector3(player1.position.x, 1, player1.position.z);
             }
-        }
-
-        private bool DetectPlayer(GameObject obj)
-        {
-            if (obj.activeSelf == true)
+            else if (camera2.activeInHierarchy)
             {
-                return true;
-            }
-            else
-            {
-                return false;
+                player1.transform.position = new Vector3(player2.position.x, 14, player2.position.z);
             }
         }
     }

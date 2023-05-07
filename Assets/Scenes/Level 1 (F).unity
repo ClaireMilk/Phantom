@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
+  m_AmbientSkyColor: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.72778887, g: 0.7207825, b: 0.69705945, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2441,6 +2441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 361397614}
   - component: {fileID: 361397613}
+  - component: {fileID: 361397615}
   m_Layer: 0
   m_Name: System
   m_TagString: Untagged
@@ -2475,6 +2476,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &361397615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361397612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db84ad3fd634ac49820f9b2dee19a83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera2: {fileID: 1654682917}
+  player1: {fileID: 6536941728816332858}
+  player2: {fileID: 1713160925}
 --- !u!1 &373405955 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 401544791851729274, guid: 2c9b04a4170852947a92128758306fb0, type: 3}
@@ -6147,7 +6163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6536941728938977263, guid: e0c02e7292a17c341a193d80681a0a2d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6536941728938977264, guid: e0c02e7292a17c341a193d80681a0a2d, type: 3}
       propertyPath: m_RootOrder
@@ -6207,7 +6223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6536941729498234867, guid: e0c02e7292a17c341a193d80681a0a2d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6536941729498234870, guid: e0c02e7292a17c341a193d80681a0a2d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6397,6 +6413,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AirRaidDestroy
       objectReference: {fileID: 0}
+    - target: {fileID: 119966, guid: e1f712d50b8c7cd4986eaed80890e5d4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 439154, guid: e1f712d50b8c7cd4986eaed80890e5d4, type: 3}
       propertyPath: m_RootOrder
       value: 41
@@ -6521,8 +6541,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59809608476e7d24aa9bc91387fbb3fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 6536941728816332837}
-  player2: {fileID: 1713160917}
+  player1: {fileID: 6536941728043636793}
+  player2: {fileID: 1654682917}
   delayTime: 2
 --- !u!95 &1004979220
 Animator:
@@ -9668,7 +9688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f911e9f18d0d4430db2d342445de6efb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.7311947
+      value: 4.281
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f911e9f18d0d4430db2d342445de6efb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11066,6 +11086,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4dc9f5a41de3a408aa438766d0f827af, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a519f03aee53c45bebfe44df6939bd67, type: 3}
+--- !u!1 &1654682917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6536941729498234867, guid: e0c02e7292a17c341a193d80681a0a2d, type: 3}
+  m_PrefabInstance: {fileID: 912647453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1662131039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11686,6 +11711,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24857d266f9dcc45b59ef98a618b7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1713160925 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6536941728938977264, guid: e0c02e7292a17c341a193d80681a0a2d, type: 3}
+  m_PrefabInstance: {fileID: 912647453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1714836406 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1200407861040370067, guid: d181e84a514193f418a2c62d4198e15d, type: 3}
