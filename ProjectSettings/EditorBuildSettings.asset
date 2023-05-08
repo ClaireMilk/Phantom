@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 1 (F).unity
     guid: d00ac7055501ebf45a90315f065e0597
+  - enabled: 1
+    path: Assets/Scenes/TestWar.unity
+    guid: 568a3e19051d94a608efd1432eb91be3
+  - enabled: 1
+    path: Assets/Scenes/TestReality.unity
+    guid: 863c8a82d7f1c4797a8ec91e05ca3d22
   m_configObjects: {}
