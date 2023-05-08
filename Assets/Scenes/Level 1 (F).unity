@@ -3905,9 +3905,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4db84ad3fd634ac49820f9b2dee19a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera2: {fileID: 1654682917}
+  camera22: {fileID: 1654682917}
   player1: {fileID: 6536941728816332858}
   player2: {fileID: 1713160925}
+  camera1: {fileID: 6536941728043636796}
+  camera2: {fileID: 1098913973}
 --- !u!1 &366317620
 GameObject:
   m_ObjectHideFlags: 0
@@ -18497,7 +18499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1098913968}
-  viewScale: 35
+  viewScale: 40
   sensitivityX: 7
   sensitivityY: 3
 --- !u!114 &1713160919
