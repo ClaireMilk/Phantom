@@ -13,6 +13,7 @@ namespace Phantom
         public float delayTime;
         private bool isAnim = false;
         private Animator anim;
+        public GameObject tutorial;
 
         private void Awake()
         {
@@ -39,15 +40,17 @@ namespace Phantom
             // start left hand turn on/off watch animation
             if (isAnim)
             {
-                anim.SetBool("isOn", b1);
+                anim.SetBool("isOn", !b1);
             }
         }
 
         //Swicth camera
         private void SwitchScene()
         {
-            player1.SetActive(!b1);
-            player2.SetActive(b1);
+            if (tutorial != null)
+                Destroy(tutorial);
+            player1.SetActive(b1);
+            player2.SetActive(!b1);
             b1 = !b1;
             b2 = !b2;
             isAnim = false;

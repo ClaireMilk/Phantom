@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Phantom
 {
@@ -11,6 +12,10 @@ namespace Phantom
         public GameObject airRaidDestroy;
         public GameObject blackUI;
         public GameObject explodeEffect;
+        public GameObject player1;
+        public GameObject player2;
+        public Animator main;
+        public Text tutorial;
 
         public void AirplaneFly(int flyEvent)
         {
@@ -31,6 +36,7 @@ namespace Phantom
                 blackUI.SetActive(true);
                 Destroy(anotherCamera);
                 Destroy(airRaidDestroy);
+                main.SetTrigger("startSwitch");
             }
         }
         public void PlaneDisappear(int flyEvent)
@@ -40,6 +46,9 @@ namespace Phantom
                 Destroy(explodeEffect);
                 Destroy(blackUI);
                 Destroy(flyAnim);
+                player1.SetActive(false);
+                player2.SetActive(true);
+                tutorial.enabled = true;
             }
         }
     }
