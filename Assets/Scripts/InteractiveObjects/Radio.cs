@@ -2,17 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Radio : MonoBehaviour
+namespace Phantom
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Radio : MonoBehaviour
     {
-        
-    }
+        public AudioSource radioSound;
+        private bool b;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Update is called once per frame
+        void Update()
+        {
+            bool canTurnRadio = PlayerRayCastTest.canTurnRadio;
+            if(Input.GetKeyDown(KeyCode.E) && canTurnRadio)
+            {
+                if (!b)
+                {
+                    radioSound.Play();
+                    b = !b;
+                }
+                else
+                {
+                    radioSound.Stop();
+                    b = !b;
+                }
+            }
+        }
     }
 }
