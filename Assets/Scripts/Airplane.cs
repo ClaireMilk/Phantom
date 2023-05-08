@@ -10,6 +10,7 @@ namespace Phantom
         public GameObject anotherCamera;
         public GameObject airRaidDestroy;
         public GameObject blackUI;
+        public GameObject explodeEffect;
 
         public void AirplaneFly(int flyEvent)
         {
@@ -21,6 +22,10 @@ namespace Phantom
 
         public void Explode(int flyEvent)
         {
+            if(flyEvent == 0)
+            {
+                explodeEffect.SetActive(true);
+            }
             if(flyEvent == 1)
             {
                 blackUI.SetActive(true);
@@ -32,6 +37,7 @@ namespace Phantom
         {
             if (flyEvent == 3)
             {
+                Destroy(explodeEffect);
                 Destroy(blackUI);
                 Destroy(flyAnim);
             }

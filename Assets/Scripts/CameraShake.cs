@@ -11,7 +11,7 @@ public class CameraShake : MonoBehaviour
     {
         if(see == 0)
         {
-            for (int i = 60; i > 40; i--)
+            for (int i = 60; i > 45; i--)
             {
                 seeAirplane.fieldOfView = i;
             }
