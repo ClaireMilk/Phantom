@@ -7,12 +7,28 @@ using UnityEngine.SceneManagement;
 public class BadEnd : MonoBehaviour
 {
     private Text drinkUI;
+    public GameObject bottle;
+    public Text otherUI;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Y) && drinkUI.enabled)
         {
-            SceneManager.LoadScene(3);
+            // add sound
+            Destroy(gameObject);
+            Destroy(bottle);
+            drinkUI.enabled = false;
+            Invoke("Ending", 2.0f);
         }
+
+        if (drinkUI.enabled)
+        {
+            otherUI.enabled = false;
+        }
+    }
+
+    void Ending()
+    {
+        SceneManager.LoadScene(3);
     }
 }

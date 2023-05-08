@@ -12,6 +12,10 @@ TagManager:
   - CheckedItems
   - Files
   - Radio
+  - Alcohol
+  - Shovel
+  - Lock
+  - Pill
   layers:
   - Default
   - TransparentFX

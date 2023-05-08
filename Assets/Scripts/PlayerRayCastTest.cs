@@ -21,11 +21,15 @@ namespace Phantom
         public static bool canOpenCabinetDoor_R;
         public static bool canPickFile;
         public static bool canTurnRadio;
+        public static bool canTakeShovel;
+        public static bool lookLockDoor;
+        public static bool lookPill;
 
         // UI control
         public Text noramaltHint;
         public Text fileHint;
         public Text alcoholHint;
+        public Text shovelHint;
 
         private void Awake()
         {
@@ -69,6 +73,9 @@ namespace Phantom
                     hit.collider.gameObject.GetComponent<PickUp>().enabled = true;
                     currentObjectName = hit.collider.gameObject.name;
                     canTurnRadio = false;
+                    alcoholHint.enabled = false;
+                    lookLockDoor = false;
+                    lookPill = false;
                 }
                 else if (hit.collider.gameObject.tag == "Watch") // ray hit watch
                     canPickupWatch = true;
@@ -77,6 +84,9 @@ namespace Phantom
                 {
                     canOpenDrawer = true;
                     canTurnRadio = false;
+                    alcoholHint.enabled = false;
+                    lookLockDoor = false;
+                    lookPill = false;
                 }
                 // ray hit cabinet door
                 else if(hit.collider.gameObject.tag == "CabinetDoor")
@@ -86,6 +96,9 @@ namespace Phantom
                     cabinetName = hit.collider.gameObject.name;
                     hit.collider.gameObject.GetComponent<CabinetDoor>().enabled = true;
                     canTurnRadio = false;
+                    alcoholHint.enabled = false;
+                    lookLockDoor = false;
+                    lookPill = false;
                 }
                 else if(hit.collider.gameObject.tag == "CabinetDoor_R")
                 {
@@ -94,6 +107,9 @@ namespace Phantom
                     cabinetName = hit.collider.gameObject.name;
                     hit.collider.gameObject.GetComponent<CabinetDoor>().enabled = true;
                     canTurnRadio = false;
+                    alcoholHint.enabled = false;
+                    lookLockDoor = false;
+                    lookPill = false;
                 }
                 else if(hit.collider.gameObject.tag == "Files" && getWatch)
                 {
@@ -101,6 +117,11 @@ namespace Phantom
                     canPickFile = true;
                     hit.collider.gameObject.GetComponent<FilePick>().enabled = true;
                     canTurnRadio = false;
+                    alcoholHint.enabled = false;
+                    lookLockDoor = false;
+                    lookPill = false;
+                    canOpenCabinetDoor_R = false;
+                    canOpenCabinetDoor = false;
                 }
                 else if(hit.collider.gameObject.tag == "Radio" && getWatch)
                 {
@@ -108,13 +129,41 @@ namespace Phantom
                     canTurnRadio = true;
                     fileHint.enabled = true;
                     radioName = hit.collider.gameObject.name;
+                    alcoholHint.enabled = false;
+                    lookLockDoor = false;
+                    lookPill = false;
+                    canOpenCabinetDoor_R = false;
+                    canOpenCabinetDoor = false;
                 }
                 else if(hit.collider.gameObject.tag == "Alcohol" && getWatch)
                 {
                     alcoholHint.enabled = true;
+                    fileHint.enabled = false;
+                    noramaltHint.enabled = false;
+                    lookLockDoor = false;
+                    lookPill = false;
+                }
+                else if(hit.collider.gameObject.tag == "Shovel" && getWatch)
+                {
+                    canTakeShovel = true;
+                    shovelHint.enabled = true;
+                }
+                else if (hit.collider.gameObject.tag == "Lock" && getWatch)
+                {
+                    lookLockDoor = true;
+                    fileHint.enabled = true;
+                    lookPill = false;
+                }
+                else if (hit.collider.gameObject.tag == "Pill" && getWatch)
+                {
+                    lookPill = true;
                 }
                 else
                 {
+                    lookPill = false;
+                    lookLockDoor = false;
+                    shovelHint.enabled = false;
+                    canTakeShovel = false;
                     canPickFile = false;
                     canPickup = false;
                     canPickupWatch = false;
