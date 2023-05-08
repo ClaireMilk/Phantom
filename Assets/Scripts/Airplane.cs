@@ -13,10 +13,6 @@ namespace Phantom
 
         public void AirplaneFly(int flyEvent)
         {
-            if(flyEvent == 0)
-            {
-                flyAnim.SetActive(true);
-            }
             if (flyEvent == 2)
             {
                 anotherCamera.SetActive(true);
