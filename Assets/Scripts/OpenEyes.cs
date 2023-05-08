@@ -45,8 +45,12 @@ public class OpenEyes : MonoBehaviour
     private void Jump()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
 }
