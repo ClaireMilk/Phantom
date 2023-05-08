@@ -1865,7 +1865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 070b454ea76082e489c4efc83955fa73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endTime: 1
+  endTime: 20
   player1: {fileID: 6536941728816332858}
   openEyeUI: {fileID: 1763704535}
   whatUI: {fileID: 1344857018}
