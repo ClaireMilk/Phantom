@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace Phantom
 {
@@ -12,7 +13,8 @@ namespace Phantom
         private PlayerInput.GameSystemActions systemInput;
         private PlayerMotor motor;
         private PlayerLook look;
-        private bool gamePause = true;
+        private bool canGamePause = true;
+        public GameObject pauseUI;
 
         void Awake()
         {
@@ -41,28 +43,32 @@ namespace Phantom
             look.ProcessLook(playerMove.Look.ReadValue<Vector2>());
         }
 
-        private void OnEnable()
+        public void OnEnable()
         {
             playerInput.Enable();
             systemInput.Pause.performed += GamePause;
         }
 
-        private void OnDisable()
+        public void OnDisable()
         {
             playerInput.Disable();
         }
 
         public void GamePause(InputAction.CallbackContext ctx)
         {
-            if (ctx.phase == InputActionPhase.Performed && gamePause)
+            if (ctx.phase == InputActionPhase.Performed && canGamePause)
             {
                 playerMove.Disable();
-                gamePause = !gamePause;
+                pauseUI.SetActive(true);
+                Cursor.lockState = CursorLockMode.Confined;
+                canGamePause = !canGamePause;
             }
-            else if(ctx.phase == InputActionPhase.Performed && !gamePause)
+            else if(ctx.phase == InputActionPhase.Performed && !canGamePause)
             {
                 playerMove.Enable();
-                gamePause = !gamePause;
+                Cursor.lockState = CursorLockMode.Locked;
+                canGamePause = !canGamePause;
+                pauseUI.SetActive(false);
             }
         }
 
@@ -76,6 +82,24 @@ namespace Phantom
             {
                 playerMove.Enable();
             }
+        }
+
+        public void Resume()
+        {
+            playerMove.Enable();
+            Cursor.lockState = CursorLockMode.Locked;
+            canGamePause = true;
+            pauseUI.SetActive(false);
+        }
+
+        public void MainMenu()
+        {
+            SceneManager.LoadScene(1);
+        }
+
+        public void QuitGame()
+        {
+            Application.Quit();
         }
     }
 }

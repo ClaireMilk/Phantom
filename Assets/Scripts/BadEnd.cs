@@ -8,7 +8,15 @@ public class BadEnd : MonoBehaviour
 {
     private Text drinkUI;
     public GameObject bottle;
-    public Text otherUI;
+    public GameObject otherE;
+    private Text otherUI;
+
+
+    private void Start()
+    {
+        drinkUI = GetComponent<Text>();
+        otherUI = otherE.GetComponent<Text>();
+    }
 
     void Update()
     {
