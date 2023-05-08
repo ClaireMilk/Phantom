@@ -601,6 +601,7 @@ Transform:
   - {fileID: 1088081167}
   - {fileID: 593812074}
   - {fileID: 1498473662}
+  - {fileID: 625691092}
   - {fileID: 132834996}
   - {fileID: 1883545125}
   - {fileID: 1030366002}
@@ -621,7 +622,6 @@ Transform:
   - {fileID: 611964059}
   - {fileID: 1203100718}
   - {fileID: 1160094511}
-  - {fileID: 625691092}
   - {fileID: 276507823}
   - {fileID: 304753020}
   - {fileID: 580696394}
@@ -3820,7 +3820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24857d266f9dcc45b59ef98a618b7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseUI: {fileID: 0}
+  pauseUI: {fileID: 366317620}
 --- !u!95 &349977482
 Animator:
   serializedVersion: 4
@@ -6322,7 +6322,7 @@ RectTransform:
   - {fileID: 783538880}
   - {fileID: 701319353}
   m_Father: {fileID: 58141640}
-  m_RootOrder: 27
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -18407,7 +18407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24857d266f9dcc45b59ef98a618b7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseUI: {fileID: 0}
+  pauseUI: {fileID: 366317620}
 --- !u!4 &1713160925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6536941728938977264, guid: e0c02e7292a17c341a193d80681a0a2d, type: 3}
