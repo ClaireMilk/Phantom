@@ -62,6 +62,7 @@ namespace Phantom
                 if (hit.collider.gameObject.tag == "CheckedItems" && getWatch)
                 {
                     canPickup = true;
+                    fileHint.enabled = true;
                     hit.collider.gameObject.GetComponent<PickUp>().enabled = true;
                     currentObjectName = hit.collider.gameObject.name;
                 }

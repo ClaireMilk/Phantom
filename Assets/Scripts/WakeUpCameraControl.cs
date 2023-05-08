@@ -2,6 +2,7 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WakeUpCameraControl : MonoBehaviour
 {
@@ -10,12 +11,14 @@ public class WakeUpCameraControl : MonoBehaviour
     public Transform player1;
     private Vector3 original;
     public GameObject openEyeUI;
+    public Text whatUI;
 
     // Start is called before the first frame update
     void Awake()
     {
         cinemachine = GetComponent<CinemachineBrain>();
         original = new Vector3(player1.position.x, player1.position.y, player1.position.z);
+        Invoke("ShowWhat", 15.0f);
         Invoke("CloseCinemachine", endTime);
     }
 
@@ -33,5 +36,11 @@ public class WakeUpCameraControl : MonoBehaviour
         transform.localRotation = Quaternion.Euler(0, 0, 0);
         cinemachine.enabled = false;
         openEyeUI.SetActive(false);
+        whatUI.enabled = false;
+    }
+
+    private void ShowWhat()
+    {
+        whatUI.enabled = true;
     }
 }

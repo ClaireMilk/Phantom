@@ -12,7 +12,6 @@ namespace Phantom
         public Transform cameraTransform;
         public Transform itemsTransform;
         public Vector3 vector;
-        private Rigidbody rb;
         public static bool isPause;
         private Vector3 originalVector_p;
         private Vector3 originalVector_r;
@@ -27,7 +26,6 @@ namespace Phantom
 
         public virtual void Awake()
         {
-            rb = GetComponent<Rigidbody>();
             isPause = false;
             canRotate = false;
             originalVector_p = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
@@ -48,7 +46,6 @@ namespace Phantom
                     transform.parent = cameraTransform;
                     transform.localPosition = new Vector3(vector.x, vector.y, vector.z);
                     transform.localRotation = Quaternion.Euler(-20, 180, 0);
-                    rb.isKinematic = true;
                     isPause = true;
                     canRotate = true;
                 }

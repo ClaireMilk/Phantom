@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Phantom
 {
@@ -10,7 +9,6 @@ namespace Phantom
         public static bool isPause;
         public static bool reading;
         public GameObject content;
-        public Text fileHint;
 
         private void Update()
         {
@@ -29,15 +27,6 @@ namespace Phantom
                     isPause = false;
                     reading = false;
                 }
-            }
-
-            if(canRead && !reading)
-            {
-                fileHint.enabled = true;
-            }
-            else
-            {
-                fileHint.enabled = false;
             }
         }
     }
