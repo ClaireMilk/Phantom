@@ -607,12 +607,12 @@ Transform:
   - {fileID: 1870824998}
   - {fileID: 805769637}
   - {fileID: 1390616277}
-  - {fileID: 1946001596}
   - {fileID: 2037970907}
+  - {fileID: 1946001596}
   - {fileID: 874245534}
   - {fileID: 2021194302}
-  - {fileID: 132834996}
   - {fileID: 869955358}
+  - {fileID: 132834996}
   - {fileID: 593812074}
   - {fileID: 2040372821}
   - {fileID: 1951883160}
@@ -2248,7 +2248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 070b454ea76082e489c4efc83955fa73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endTime: 1
+  endTime: 20
   player1: {fileID: 6536941728816332858}
   openEyeUI: {fileID: 1763704535}
   whatUI: {fileID: 1344857018}
@@ -4685,10 +4685,10 @@ MonoBehaviour:
   airRaidDestroy: {fileID: 890122154}
   blackUI: {fileID: 338720754}
   explodeEffect: {fileID: 786184809}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  main: {fileID: 0}
-  tutorial: {fileID: 0}
+  player1: {fileID: 6536941728043636793}
+  player2: {fileID: 1654682917}
+  main: {fileID: 1004979220}
+  tutorial: {fileID: 1982578464}
 --- !u!1 &574197456
 GameObject:
   m_ObjectHideFlags: 0
@@ -8270,7 +8270,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 58141640}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!64 &869955359
 MeshCollider:
@@ -8946,7 +8946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 119966, guid: e1f712d50b8c7cd4986eaed80890e5d4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 439154, guid: e1f712d50b8c7cd4986eaed80890e5d4, type: 3}
       propertyPath: m_RootOrder
@@ -9075,7 +9075,7 @@ MonoBehaviour:
   player1: {fileID: 6536941728043636793}
   player2: {fileID: 1654682917}
   delayTime: 2
-  tutorial: {fileID: 0}
+  tutorial: {fileID: 1982578463}
 --- !u!95 &1004979220
 Animator:
   serializedVersion: 4
@@ -9150,11 +9150,11 @@ MonoBehaviour:
   anotherCamera: {fileID: 648824079}
   airRaidDestroy: {fileID: 890122154}
   blackUI: {fileID: 338720754}
-  explodeEffect: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  main: {fileID: 0}
-  tutorial: {fileID: 0}
+  explodeEffect: {fileID: 786184809}
+  player1: {fileID: 6536941728043636793}
+  player2: {fileID: 1654682917}
+  main: {fileID: 1004979220}
+  tutorial: {fileID: 1982578464}
 --- !u!1 &1008082312
 GameObject:
   m_ObjectHideFlags: 0
@@ -19732,7 +19732,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 58141640}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2038878605
 PrefabInstance:
