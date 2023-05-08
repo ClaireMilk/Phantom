@@ -13,16 +13,19 @@ namespace Phantom
         public static bool canPickupWatch;
         private string currentObjectName;
         private string cabinetName;
+        private string radioName;
 
         //open furnitures
         public static bool canOpenDrawer;
         public static bool canOpenCabinetDoor;
         public static bool canOpenCabinetDoor_R;
         public static bool canPickFile;
+        public static bool canTurnRadio;
 
         // UI control
         public Text noramaltHint;
         public Text fileHint;
+        public Text alcoholHint;
 
         private void Awake()
         {
@@ -59,40 +62,56 @@ namespace Phantom
             if (Physics.Raycast(ray, out hit, rayDistance))
             {
                 // ray hit normal items
-                if (hit.collider.gameObject.tag == "CheckedItems" && getWatch)
+                if (hit.collider.gameObject.tag == "CheckedItems")
                 {
                     canPickup = true;
                     fileHint.enabled = true;
                     hit.collider.gameObject.GetComponent<PickUp>().enabled = true;
                     currentObjectName = hit.collider.gameObject.name;
+                    canTurnRadio = false;
                 }
                 else if (hit.collider.gameObject.tag == "Watch") // ray hit watch
                     canPickupWatch = true;
                 // ray hit drawers
-                else if (hit.collider.gameObject.tag == "Drawer" && getWatch)
+                else if (hit.collider.gameObject.tag == "Drawer")
                 {
                     canOpenDrawer = true;
+                    canTurnRadio = false;
                 }
                 // ray hit cabinet door
-                else if(hit.collider.gameObject.tag == "CabinetDoor" && getWatch)
+                else if(hit.collider.gameObject.tag == "CabinetDoor")
                 {
                     canOpenCabinetDoor = true;
                     canOpenCabinetDoor_R = false;
                     cabinetName = hit.collider.gameObject.name;
                     hit.collider.gameObject.GetComponent<CabinetDoor>().enabled = true;
+                    canTurnRadio = false;
                 }
-                else if(hit.collider.gameObject.tag == "CabinetDoor_R" && getWatch)
+                else if(hit.collider.gameObject.tag == "CabinetDoor_R")
                 {
                     canOpenCabinetDoor_R = true;
                     canOpenCabinetDoor = false;
                     cabinetName = hit.collider.gameObject.name;
                     hit.collider.gameObject.GetComponent<CabinetDoor>().enabled = true;
+                    canTurnRadio = false;
                 }
                 else if(hit.collider.gameObject.tag == "Files" && getWatch)
                 {
                     fileHint.enabled = true;
                     canPickFile = true;
                     hit.collider.gameObject.GetComponent<FilePick>().enabled = true;
+                    canTurnRadio = false;
+                }
+                else if(hit.collider.gameObject.tag == "Radio" && getWatch)
+                {
+                    hit.collider.gameObject.GetComponent<Radio>().enabled = true;
+                    canTurnRadio = true;
+                    fileHint.enabled = true;
+                    radioName = hit.collider.gameObject.name;
+                }
+                else if(hit.collider.gameObject.tag == "Alcohol" && getWatch)
+                {
+                    alcoholHint.enabled = true;
                 }
                 else
                 {
@@ -104,6 +123,8 @@ namespace Phantom
                     canOpenCabinetDoor_R = false;
                     cabinetName = null;
                     fileHint.enabled = false;
+                    canTurnRadio = false;
+                    alcoholHint.enabled = false;
                 }
                 
                 if (currentObjectName != null && !isChecking)
@@ -143,6 +164,14 @@ namespace Phantom
                         for (int i = 0; i < cabinetDoor.Length; i++)
                         {
                             cabinetDoor[i].GetComponent<CabinetDoor>().enabled = false;
+                        }
+                    }
+
+                    if (radioName != null && !canTurnRadio)
+                    {
+                        if (hit.collider.gameObject.tag != "Radio")
+                        {
+                            GameObject.Find(radioName).GetComponent<Radio>().enabled = false;
                         }
                     }
                 }

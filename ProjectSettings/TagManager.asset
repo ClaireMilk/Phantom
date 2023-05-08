@@ -11,6 +11,7 @@ TagManager:
   - CabinetDoor_R
   - CheckedItems
   - Files
+  - Radio
   layers:
   - Default
   - TransparentFX
