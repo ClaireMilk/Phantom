@@ -9,7 +9,7 @@ public class TitleControl : MonoBehaviour
 
     void Start()
     {
-        Invoke("ShowTitle", 1.5f);
+        Invoke("ShowTitle", 2.0f);
         Invoke("ToMainMenu", 4.0f);
     }
 
