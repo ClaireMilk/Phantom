@@ -19,6 +19,7 @@ public class WakeUpCameraControl : MonoBehaviour
         cinemachine = GetComponent<CinemachineBrain>();
         original = new Vector3(player1.position.x, player1.position.y, player1.position.z);
         Invoke("ShowWhat", 15.0f);
+        Invoke("CloseUI", 14.2f);
         Invoke("CloseCinemachine", endTime);
     }
 
@@ -35,8 +36,12 @@ public class WakeUpCameraControl : MonoBehaviour
         transform.localPosition = new Vector3(0, 4, 0);
         transform.localRotation = Quaternion.Euler(0, 0, 0);
         cinemachine.enabled = false;
-        openEyeUI.SetActive(false);
         whatUI.enabled = false;
+    }
+
+    private void CloseUI()
+    {
+        openEyeUI.SetActive(false);
     }
 
     private void ShowWhat()
