@@ -25,8 +25,9 @@ namespace Phantom
 
         private void Update()
         {
-            bool isPause = PickUp.isPause;
-            PickUpPause(isPause);
+            bool isPause1 = PickUp.isPause;
+            bool isPause2 = FilePick.isPause;
+            PickUpPause(isPause1 || isPause2);
         }
 
         void FixedUpdate()

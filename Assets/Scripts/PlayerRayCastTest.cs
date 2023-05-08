@@ -18,9 +18,11 @@ namespace Phantom
         public static bool canOpenDrawer;
         public static bool canOpenCabinetDoor;
         public static bool canOpenCabinetDoor_R;
+        public static bool canPickFile;
 
         // UI control
         public Text noramaltHint;
+        public Text fileHint;
 
         private void Awake()
         {
@@ -31,6 +33,17 @@ namespace Phantom
         void Update()
         {
             LookAtRay();
+
+            bool isReading = FilePick.reading;
+            if (!isReading && !canPickFile)
+            {
+                GameObject[] Objs;
+                Objs = GameObject.FindGameObjectsWithTag("Files");
+                for (int i = 0; i < Objs.Length; i++)
+                {
+                    Objs[i].GetComponent<FilePick>().enabled = false;
+                }
+            }
         }
 
         private void LookAtRay()
@@ -46,7 +59,7 @@ namespace Phantom
             if (Physics.Raycast(ray, out hit, rayDistance))
             {
                 // ray hit normal items
-                if (hit.collider.gameObject.tag == "CheckedItems")
+                if (hit.collider.gameObject.tag == "CheckedItems" && getWatch)
                 {
                     canPickup = true;
                     hit.collider.gameObject.GetComponent<PickUp>().enabled = true;
@@ -55,33 +68,41 @@ namespace Phantom
                 else if (hit.collider.gameObject.tag == "Watch") // ray hit watch
                     canPickupWatch = true;
                 // ray hit drawers
-                else if (hit.collider.gameObject.tag == "Drawer")
+                else if (hit.collider.gameObject.tag == "Drawer" && getWatch)
                 {
                     canOpenDrawer = true;
                 }
                 // ray hit cabinet door
-                else if(hit.collider.gameObject.tag == "CabinetDoor")
+                else if(hit.collider.gameObject.tag == "CabinetDoor" && getWatch)
                 {
                     canOpenCabinetDoor = true;
                     canOpenCabinetDoor_R = false;
                     cabinetName = hit.collider.gameObject.name;
                     hit.collider.gameObject.GetComponent<CabinetDoor>().enabled = true;
                 }
-                else if(hit.collider.gameObject.tag == "CabinetDoor_R")
+                else if(hit.collider.gameObject.tag == "CabinetDoor_R" && getWatch)
                 {
                     canOpenCabinetDoor_R = true;
                     canOpenCabinetDoor = false;
                     cabinetName = hit.collider.gameObject.name;
                     hit.collider.gameObject.GetComponent<CabinetDoor>().enabled = true;
                 }
+                else if(hit.collider.gameObject.tag == "Files" && getWatch)
+                {
+                    fileHint.enabled = true;
+                    canPickFile = true;
+                    hit.collider.gameObject.GetComponent<FilePick>().enabled = true;
+                }
                 else
                 {
+                    canPickFile = false;
                     canPickup = false;
                     canPickupWatch = false;
                     canOpenDrawer = false;
                     canOpenCabinetDoor = false;
                     canOpenCabinetDoor_R = false;
                     cabinetName = null;
+                    fileHint.enabled = false;
                 }
                 
                 if (currentObjectName != null && !isChecking)
