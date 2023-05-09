@@ -51,6 +51,12 @@ namespace Phantom
                     Objs[i].GetComponent<FilePick>().enabled = false;
                 }
             }
+
+            if (!canOpenDrawer)
+            {
+                var Objs = GameObject.FindGameObjectWithTag("Drawer");
+                Objs.GetComponent<Drawer>().enabled = false;
+            }
         }
 
         private void LookAtRay()
@@ -82,6 +88,7 @@ namespace Phantom
                 // ray hit drawers
                 else if (hit.collider.gameObject.tag == "Drawer")
                 {
+                    hit.collider.gameObject.GetComponent<Drawer>().enabled = true;
                     canOpenDrawer = true;
                     canTurnRadio = false;
                     alcoholHint.enabled = false;

@@ -14,12 +14,14 @@ public class EndingAnim : MonoBehaviour
     public GameObject lockTwo;
     public AudioSource footstep;
     public AudioSource lockOpen;
+    public AudioSource goodEnding;
+    public GameObject black;
 
     // Start is called before the first frame update
     void Start()
     {
         Invoke("BreakArm", endTime);
-        Invoke("KeyUI", endTime + 3.0f);
+        Invoke("KeyUI", endTime + 4.0f);
     }
 
     private void Update()
@@ -30,7 +32,8 @@ public class EndingAnim : MonoBehaviour
             useKey.enabled = false;
             lockOne.SetActive(false);
             lockTwo.SetActive(true);
-            Invoke("NextScene", 2.0f);
+            Invoke("EndingSFX", 1.5f);
+            Invoke("NextScene", 7.5f);
         }
     }
 
@@ -49,6 +52,12 @@ public class EndingAnim : MonoBehaviour
     void KeyUI()
     {
         useKey.enabled = true;
+    }
+
+    void EndingSFX()
+    {
+        black.SetActive(true);
+        goodEnding.Play();
     }
 
     void NextScene()

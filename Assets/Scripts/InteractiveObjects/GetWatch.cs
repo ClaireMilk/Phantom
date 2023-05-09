@@ -33,7 +33,10 @@ namespace Phantom
             bool canPickup = PlayerRayCastTest.canPickupWatch;
 
             if (Input.GetKeyDown(KeyCode.E) && canPickup)
+            {
+                checkItem.Play();
                 i++;
+            }
             else if(canPickup)
                 stepOne.enabled = true;
             else
@@ -49,7 +52,6 @@ namespace Phantom
                     case 1:
                         stepOne.enabled = false;
                         stepTwo.enabled = true;
-                        checkItem.Play();
                         StepTwo();
                         MouseControlObjectRotation();
                         break;
