@@ -15,6 +15,7 @@ namespace Phantom
         public static bool getWatch;
         private Vector3 originalPosition;
         public Transform world;
+        public AudioSource take;
 
         public override void Awake()
         {
@@ -101,6 +102,7 @@ namespace Phantom
         {
             Destroy(gameObject);
             Destroy(stepOne);
+            take.Play();
         }
     }
 }

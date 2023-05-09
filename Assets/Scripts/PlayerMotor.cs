@@ -28,6 +28,9 @@ namespace Phantom
             //movement
             Vector3 movement = new Vector3(input.x, 0, input.y);
             rb.velocity = transform.TransformDirection(movement * speed * Time.deltaTime);
+
+            bool inReality = SwitchPlayer.bgmControl;
+            //Debug.Log(inReality);
         }
     }
 }
