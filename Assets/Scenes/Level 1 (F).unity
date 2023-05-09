@@ -1955,7 +1955,7 @@ PlayableDirector:
   m_GameObject: {fileID: 168088334}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: c9e6a8a03d0684b87a633e5e2edf5914, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 3a48eec5e36c14976b7dede0e717d037, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -1965,10 +1965,6 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: -2040550459245313943, guid: 3a48eec5e36c14976b7dede0e717d037, type: 2}
     value: {fileID: 227056188}
-  - key: {fileID: -2040550459245313943, guid: c9e6a8a03d0684b87a633e5e2edf5914, type: 2}
-    value: {fileID: 227056188}
-  - key: {fileID: -2551613499419629134, guid: c9e6a8a03d0684b87a633e5e2edf5914, type: 2}
-    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - b641021cf10cf49ad96157012679a095: {fileID: 1351221250}
@@ -24361,7 +24357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2138792834
 Transform:
   m_ObjectHideFlags: 0
