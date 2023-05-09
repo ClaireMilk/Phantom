@@ -24,6 +24,9 @@ namespace Phantom
         protected float x, y;
         public static bool canRotate;
         public AudioSource grab;
+        public AudioSource plotMusic;
+        public AudioSource realityBGM;
+        public AudioSource dogSound;
 
         public virtual void Awake()
         {
@@ -50,9 +53,21 @@ namespace Phantom
                     transform.localRotation = Quaternion.Euler(-20, 180, 0);
                     isPause = true;
                     canRotate = true;
+                    if(plotMusic != null)
+                    {
+                        realityBGM.volume = realityBGM.volume * 0.5f;
+                        dogSound.volume = dogSound.volume * 0.2f;
+                        plotMusic.Play();
+                    }
                 }
                 else
                 {
+                    if (plotMusic != null)
+                    {
+                        realityBGM.volume = realityBGM.volume * 2.0f;
+                        dogSound.volume = dogSound.volume * 5f;
+                        plotMusic.Stop();
+                    }
                     grab.Play();
                     isPause = false;
                     transform.parent = itemsTransform;
