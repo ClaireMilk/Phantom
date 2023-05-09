@@ -10,7 +10,7 @@ public class BadEnd : MonoBehaviour
     public GameObject bottle;
     public GameObject otherE;
     private Text otherUI;
-
+    public AudioSource drinking;
 
     private void Start()
     {
@@ -22,11 +22,10 @@ public class BadEnd : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Y) && drinkUI.enabled)
         {
-            // add sound
-            Destroy(gameObject);
+            drinking.Play();
             Destroy(bottle);
             drinkUI.enabled = false;
-            Invoke("Ending", 2.0f);
+            Invoke("BadEnding", 7.0f);
         }
 
         if (drinkUI.enabled)
@@ -35,7 +34,7 @@ public class BadEnd : MonoBehaviour
         }
     }
 
-    void Ending()
+    void BadEnding()
     {
         SceneManager.LoadScene(3);
     }

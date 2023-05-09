@@ -19,7 +19,7 @@ public class WakeUpCameraControl : MonoBehaviour
     {
         cinemachine = GetComponent<CinemachineBrain>();
         original = new Vector3(player1.position.x, player1.position.y, player1.position.z);
-        Invoke("ShowWhat", 15.0f);
+        Invoke("ShowWhat", 17.0f);
         Invoke("CloseUI", 14.2f);
         Invoke("CloseCinemachine", endTime);
         Invoke("CloseWake", 30.0f);

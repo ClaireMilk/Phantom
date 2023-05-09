@@ -17,6 +17,7 @@ namespace Phantom
         public GameObject audioR;
         public GameObject audioN;
         public static bool bgmControl;
+        public AudioSource useWatch;
 
         private void Awake()
         {
@@ -31,6 +32,7 @@ namespace Phantom
             //Switch the two different world
             if (Input.GetMouseButtonDown(1) && b2)
             {
+                useWatch.Play();
                 isAnim = true;
                 b2 = !b2;
                 Invoke("SwitchScene", delayTime);

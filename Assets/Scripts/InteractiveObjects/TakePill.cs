@@ -9,6 +9,7 @@ namespace Phantom
     public class TakePill : MonoBehaviour
     {
         public Text pillUI;
+        public AudioSource eatPill;
 
         // Update is called once per frame
         void Update()
@@ -22,10 +23,10 @@ namespace Phantom
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    //add sound
+                    eatPill.Play();
                     Destroy(gameObject);
                     pillUI.enabled = false;
-                    Invoke("Ending", 2.0f);
+                    Invoke("Ending", 4.0f);
                 }
             }
             else

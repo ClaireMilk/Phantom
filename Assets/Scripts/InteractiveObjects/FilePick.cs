@@ -9,6 +9,7 @@ namespace Phantom
         public static bool isPause;
         public static bool reading;
         public GameObject content;
+        public AudioSource checkMail;
 
         private void Update()
         {
@@ -17,12 +18,14 @@ namespace Phantom
             {
                 if (canRead && !reading)
                 {
+                    checkMail.Play();
                     content.SetActive(true);
                     isPause = true;
                     reading = true;
                 }
                 else
                 {
+                    checkMail.Play();
                     content.SetActive(false);
                     isPause = false;
                     reading = false;

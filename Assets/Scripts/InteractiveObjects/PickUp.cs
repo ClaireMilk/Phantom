@@ -23,6 +23,7 @@ namespace Phantom
         public float ySpeed;
         protected float x, y;
         public static bool canRotate;
+        public AudioSource grab;
 
         public virtual void Awake()
         {
@@ -43,6 +44,7 @@ namespace Phantom
                 //Debug.Log(canPickup);
                 if (canPickup && !canRotate)
                 {
+                    grab.Play();
                     transform.parent = cameraTransform;
                     transform.localPosition = new Vector3(vector.x, vector.y, vector.z);
                     transform.localRotation = Quaternion.Euler(-20, 180, 0);
@@ -51,6 +53,7 @@ namespace Phantom
                 }
                 else
                 {
+                    grab.Play();
                     isPause = false;
                     transform.parent = itemsTransform;
                     transform.localRotation = Quaternion.Euler(originalVector_r.x, originalVector_r.y, originalVector_r.z);

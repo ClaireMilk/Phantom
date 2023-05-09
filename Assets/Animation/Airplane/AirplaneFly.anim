@@ -209,7 +209,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 1
     messageOptions: 0
-  - time: 2.4333334
+  - time: 2.3
     functionName: PlaneDisappear
     data: 
     objectReferenceParameter: {fileID: 0}
