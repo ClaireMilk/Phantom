@@ -16,7 +16,7 @@ namespace Phantom
         public GameObject tutorial;
         public GameObject audioR;
         public GameObject audioN;
-        private bool bgmControl;
+        public static bool bgmControl;
 
         private void Awake()
         {
