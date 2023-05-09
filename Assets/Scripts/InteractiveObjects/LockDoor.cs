@@ -10,6 +10,8 @@ namespace Phantom
         public Text lockedUI;
         public GameObject brokenDoor;
         public static bool doorOpen;
+        public AudioSource useShovel;
+        public AudioSource doorIsLocked;
 
         // Update is called once per frame
         void Update()
@@ -21,12 +23,13 @@ namespace Phantom
             {
                 if (!haveShovel)
                 {
+                    doorIsLocked.Play();
                     lockedUI.enabled = true;
                     Invoke("CloseUI", 1.0f);
                 }
                 else
                 {
-                    //add sound
+                    useShovel.Play();
                     doorOpen = true;
                     brokenDoor.SetActive(true);
                     Destroy(gameObject);

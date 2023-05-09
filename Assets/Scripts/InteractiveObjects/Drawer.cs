@@ -8,6 +8,7 @@ namespace Phantom
     {
         private bool closed = true;
         public float moveDistance;
+        public AudioSource openDrawer;
 
         // Update is called once per frame
         void Update()
@@ -17,6 +18,7 @@ namespace Phantom
 
             if (Input.GetKeyDown(KeyCode.E) && getWatch)
             {
+                openDrawer.Play();
                 if (isSeeing && closed)
                 {
                     transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, (transform.localPosition.z + moveDistance));

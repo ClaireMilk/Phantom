@@ -24,9 +24,9 @@ namespace Phantom
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     eatPill.Play();
-                    Destroy(gameObject);
                     pillUI.enabled = false;
                     Invoke("Ending", 4.0f);
+                    gameObject.SetActive(false);
                 }
             }
             else

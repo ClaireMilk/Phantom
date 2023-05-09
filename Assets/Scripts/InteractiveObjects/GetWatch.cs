@@ -16,6 +16,7 @@ namespace Phantom
         private Vector3 originalPosition;
         public Transform world;
         public AudioSource take;
+        public AudioSource checkItem;
 
         public override void Awake()
         {
@@ -48,6 +49,7 @@ namespace Phantom
                     case 1:
                         stepOne.enabled = false;
                         stepTwo.enabled = true;
+                        checkItem.Play();
                         StepTwo();
                         MouseControlObjectRotation();
                         break;

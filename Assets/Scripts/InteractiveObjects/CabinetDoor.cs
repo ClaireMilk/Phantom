@@ -10,6 +10,7 @@ namespace Phantom
         private bool closedLeft = true;
         private bool closedRight = true;
         private bool b;
+        public AudioSource openCab;
 
         // Update is called once per frame
         void Update()
@@ -23,6 +24,7 @@ namespace Phantom
                 if (Input.GetKeyDown(KeyCode.E) && getWatch)
                 {
                     b = true;
+                    openCab.Play();
                 }
             }
         }
