@@ -1969,15 +1969,22 @@ PlayableDirector:
     m_References:
     - b641021cf10cf49ad96157012679a095: {fileID: 1351221250}
     - 1bbe565d9605847658252d1c3a22c195: {fileID: 0}
+    - 447ff76c5fe544e96a3a707e3f446818: {fileID: 1699440275}
     - 3c1fd157abd5442baae82e4d479f379b: {fileID: 1593044332}
     - c9d39aa79e7e94659af134ef16151f50: {fileID: 2031004884}
     - 5778b2e9e672848fb87504f94129a0a3: {fileID: 0}
     - 3113575dc07264eebacd8442c24b54aa: {fileID: 1699440275}
+    - 76682153df4974026bf5cbe30232bcbc: {fileID: 1351221250}
     - 31b5e80f669164e5eb627415c0e05412: {fileID: 1021959162}
+    - c52870741587145a7b1fdf0f9ba31ec3: {fileID: 1021959162}
     - 2d6e10c8720414cafa6563c005a9091b: {fileID: 1454586812}
+    - 58e29afc71a524779836af9ea462f189: {fileID: 1994967309}
+    - 1494dbdd7311749a682afaddc9c1831f: {fileID: 1593044332}
+    - 4e1b967a5e9334b6d80732241f502f58: {fileID: 1454586812}
     - ec8ca692905c843fc8a7b2214d12cbfa: {fileID: 0}
     - 22d01e67c50984077be96e4ab1313670: {fileID: 0}
     - 9b60621cf5ab34e1ea7c5e61c8b12301: {fileID: 1886696065}
+    - 73eca60beab5a4783a642714ac829827: {fileID: 1886696065}
     - 985347db6d75f4a45b64472647fd99a9: {fileID: 1994967309}
 --- !u!4 &168088336
 Transform:
@@ -24686,8 +24693,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6536941728043636793}
-  m_LocalRotation: {x: 0.106389455, y: 0.31644723, z: 0.69130087, w: 0.6408164}
-  m_LocalPosition: {x: -2.0835807, y: 0.34599972, z: 2.082881}
+  m_LocalRotation: {x: 0.11710825, y: -0.4217066, z: 0.05502833, w: 0.8974526}
+  m_LocalPosition: {x: -1.7626247, y: 4.826, z: 2.005506}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
