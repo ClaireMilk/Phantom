@@ -16,6 +16,6 @@ public class FootStep : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        if()
+        //if()
     }
 }
