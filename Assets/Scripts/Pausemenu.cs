@@ -18,7 +18,7 @@ public class Pausemenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+       Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -29,7 +29,8 @@ public class Pausemenu : MonoBehaviour
         {
             if(ispaused == false)//game is runing, pressed esc
             {
-                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Confined;
+                
                 pausemenu.SetActive(true);
                 Time.timeScale=0;
                 ispaused=true;
@@ -40,7 +41,7 @@ public class Pausemenu : MonoBehaviour
                     }else{pauseImage.sprite = NightmareS;}}
                 else{pauseImage.sprite = NightmareS;}
             }else{//game is paused, pressed esc
-                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.Locked;
                 pausemenu.SetActive(false);
                 Time.timeScale=1;
                 ispaused=false;
