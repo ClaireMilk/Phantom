@@ -1158,6 +1158,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endTime: 3
+  player1: {fileID: 0}
+  openEyeUI: {fileID: 0}
+  whatUI: {fileID: 0}
+  awakeSFX: {fileID: 0}
 --- !u!1001 &237203204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1492,6 +1496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24857d266f9dcc45b59ef98a618b7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseUI: {fileID: 0}
 --- !u!95 &349977482
 Animator:
   serializedVersion: 4
@@ -5018,6 +5023,9 @@ MonoBehaviour:
   rayDistance: 6
   rayColor: {r: 1, g: 0, b: 0, a: 1}
   noramaltHint: {fileID: 0}
+  fileHint: {fileID: 0}
+  alcoholHint: {fileID: 0}
+  shovelHint: {fileID: 0}
 --- !u!4 &1494515466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5922547406318179923, guid: b4883e3ce0bc24eb2b596565d84105ab, type: 3}
@@ -5994,6 +6002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24857d266f9dcc45b59ef98a618b7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseUI: {fileID: 0}
 --- !u!4 &1714836406 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1200407861040370067, guid: d181e84a514193f418a2c62d4198e15d, type: 3}
@@ -6054,6 +6063,9 @@ MonoBehaviour:
   player1: {fileID: 227056184}
   player2: {fileID: 1098913967}
   delayTime: 2
+  tutorial: {fileID: 0}
+  audioR: {fileID: 0}
+  audioN: {fileID: 0}
 --- !u!95 &1725689937
 Animator:
   serializedVersion: 4
@@ -7308,6 +7320,9 @@ MonoBehaviour:
   player1: {fileID: 227056184}
   player2: {fileID: 1098913967}
   delayTime: 2
+  tutorial: {fileID: 0}
+  audioR: {fileID: 0}
+  audioN: {fileID: 0}
 --- !u!95 &2024553842
 Animator:
   serializedVersion: 4
