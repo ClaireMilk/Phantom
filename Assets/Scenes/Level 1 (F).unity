@@ -11121,7 +11121,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 005d90c58a5da4365a36c1f4a8e1aa12, type: 2}
     - target: {fileID: 919132149155446097, guid: 97b82112bbf9747499202d16418557b3, type: 3}
       propertyPath: m_Name
-      value: "\u836F\u74F6"
+      value: Medicine
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 97b82112bbf9747499202d16418557b3, type: 3}
       propertyPath: m_TagString
@@ -16794,7 +16794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e19f97caa53b042beb858579a6ef420c, type: 3}
       propertyPath: m_Name
-      value: "\u76F8\u6846.exported (5)"
+      value: Photoframe.exported (5)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e19f97caa53b042beb858579a6ef420c, type: 3}
       propertyPath: m_TagString
@@ -23501,7 +23501,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 85a7e033cffc141cea667bec1e4326de, type: 2}
     - target: {fileID: 919132149155446097, guid: f678b551791454c738df6b19f81f710e, type: 3}
       propertyPath: m_Name
-      value: "\u70DF\u7070\u7F38.exported"
+      value: Ashtray.exported
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f678b551791454c738df6b19f81f710e, type: 3}
       propertyPath: m_TagString
@@ -26373,7 +26373,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d7cc2390d61804a0d8f1d8d4f6ba32dc, type: 2}
     - target: {fileID: 919132149155446097, guid: 2f0dec33389b4404a8fef5bac6f6fd2b, type: 3}
       propertyPath: m_Name
-      value: "\u7A97\u6237.exported"
+      value: Windows.exported
       objectReference: {fileID: 0}
     - target: {fileID: 1137470927054852292, guid: 2f0dec33389b4404a8fef5bac6f6fd2b, type: 3}
       propertyPath: m_Materials.Array.data[0]
