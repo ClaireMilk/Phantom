@@ -12,6 +12,7 @@ public class WakeUpCameraControl : MonoBehaviour
     private Vector3 original;
     public GameObject openEyeUI;
     public Text whatUI;
+    public GameObject awakeSFX;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,6 +22,7 @@ public class WakeUpCameraControl : MonoBehaviour
         Invoke("ShowWhat", 15.0f);
         Invoke("CloseUI", 14.2f);
         Invoke("CloseCinemachine", endTime);
+        Invoke("CloseWake", 30.0f);
     }
 
     // Update is called once per frame
@@ -47,5 +49,10 @@ public class WakeUpCameraControl : MonoBehaviour
     private void ShowWhat()
     {
         whatUI.enabled = true;
+    }
+
+    private void CloseWake()
+    {
+        awakeSFX.SetActive(false);
     }
 }

@@ -8,6 +8,7 @@ namespace Phantom
     {
         public AudioSource radioSound;
         private bool b;
+        public AudioSource radioPush;
 
         // Update is called once per frame
         void Update()
@@ -18,11 +19,13 @@ namespace Phantom
                 if (!b)
                 {
                     radioSound.Play();
+                    radioPush.Play();
                     b = !b;
                 }
                 else
                 {
                     radioSound.Stop();
+                    radioPush.Play();
                     b = !b;
                 }
             }

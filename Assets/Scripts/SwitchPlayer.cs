@@ -14,6 +14,9 @@ namespace Phantom
         private bool isAnim = false;
         private Animator anim;
         public GameObject tutorial;
+        public GameObject audioR;
+        public GameObject audioN;
+        private bool bgmControl;
 
         private void Awake()
         {
@@ -51,6 +54,10 @@ namespace Phantom
                 Destroy(tutorial);
             player1.SetActive(b1);
             player2.SetActive(!b1);
+
+            audioR.SetActive(bgmControl);
+            audioN.SetActive(!bgmControl);
+            bgmControl = !bgmControl;
             b1 = !b1;
             b2 = !b2;
             isAnim = false;

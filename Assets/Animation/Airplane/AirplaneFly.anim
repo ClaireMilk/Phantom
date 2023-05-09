@@ -105,7 +105,7 @@ AnimationClip:
       value: {fileID: 21300000, guid: f2cf2da3f57cca64e954ed9e51b870a6, type: 3}
     - time: 2.2666667
       value: {fileID: 21300000, guid: f2cf2da3f57cca64e954ed9e51b870a6, type: 3}
-    - time: 4.4
+    - time: 10.366667
       value: {fileID: 21300000, guid: f2cf2da3f57cca64e954ed9e51b870a6, type: 3}
     attribute: m_Sprite
     path: 
@@ -175,7 +175,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 4.416667
+    m_StopTime: 10.383333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -209,7 +209,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 1
     messageOptions: 0
-  - time: 4.383333
+  - time: 6.5666666
+    functionName: PlaneDisappear
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 4
+    messageOptions: 0
+  - time: 10.3
     functionName: PlaneDisappear
     data: 
     objectReferenceParameter: {fileID: 0}
