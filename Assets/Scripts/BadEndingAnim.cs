@@ -12,12 +12,15 @@ public class BadEndingAnim : MonoBehaviour
     public Text usePistol;
     public AudioSource footstep;
     public AudioSource gunShoot;
+    public GameObject gunAnim;
+    public GameObject newCamera;
 
     // Start is called before the first frame update
     void Start()
     {
         Invoke("BreakArm", endTime);
-        Invoke("KeyUI", endTime + 3.0f);
+        Invoke("KeyUI", endTime + 2.0f);
+
     }
 
     private void Update()
@@ -25,6 +28,8 @@ public class BadEndingAnim : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             usePistol.enabled = false;
+            gunAnim.SetActive(true);
+            Invoke("NextScene", 4.0f);
         }
     }
 
@@ -42,6 +47,7 @@ public class BadEndingAnim : MonoBehaviour
 
     void KeyUI()
     {
+        newCamera.SetActive(true);
         usePistol.enabled = true;
     }
 
