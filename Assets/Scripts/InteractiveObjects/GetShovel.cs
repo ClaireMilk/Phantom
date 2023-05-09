@@ -7,6 +7,7 @@ namespace Phantom
     public class GetShovel : MonoBehaviour
     {
         public static bool getShovel;
+        public AudioSource shovel;
 
         // Update is called once per frame
         void Update()
@@ -14,6 +15,7 @@ namespace Phantom
             bool canTake = PlayerRayCastTest.canTakeShovel;
             if(Input.GetKeyDown(KeyCode.E) && canTake)
             {
+                shovel.Play();
                 getShovel = true;
                 Destroy(gameObject);
             }
