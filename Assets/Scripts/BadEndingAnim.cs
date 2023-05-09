@@ -11,7 +11,6 @@ public class BadEndingAnim : MonoBehaviour
     public GameObject pistol;
     public Text usePistol;
     public AudioSource footstep;
-    public AudioSource gunShoot;
     public GameObject gunAnim;
     public GameObject newCamera;
 
