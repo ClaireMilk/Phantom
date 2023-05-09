@@ -11,7 +11,6 @@ public class BadEndingAnim : MonoBehaviour
     public GameObject pistol;
     public Text usePistol;
     public AudioSource footstep;
-    public GameObject gunAniml;
     public AudioSource gunShoot;
 
     // Start is called before the first frame update
@@ -26,9 +25,6 @@ public class BadEndingAnim : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             usePistol.enabled = false;
-            gunAniml.SetActive(true);
-            gunShoot.Play();
-            Invoke("NextScene", 2.0f);
         }
     }
 
