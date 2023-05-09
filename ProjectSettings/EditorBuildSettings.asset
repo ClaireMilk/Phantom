@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestReality.unity
     guid: 863c8a82d7f1c4797a8ec91e05ca3d22
+  - enabled: 1
+    path: Assets/Scenes/GameEnd.unity
+    guid: fadefba98b183934aa75f2c3a70aa038
   m_configObjects: {}
