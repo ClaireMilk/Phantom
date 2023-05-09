@@ -1967,25 +1967,33 @@ PlayableDirector:
     value: {fileID: 227056188}
   m_ExposedReferences:
     m_References:
+    - fc452d1b9cd564c378bcae4c58f1d703: {fileID: 1994967309}
     - b641021cf10cf49ad96157012679a095: {fileID: 1351221250}
     - 1bbe565d9605847658252d1c3a22c195: {fileID: 0}
     - 447ff76c5fe544e96a3a707e3f446818: {fileID: 1699440275}
     - 3c1fd157abd5442baae82e4d479f379b: {fileID: 1593044332}
     - c9d39aa79e7e94659af134ef16151f50: {fileID: 2031004884}
+    - 10a7fa2a2d3094e58ba999c2ee24f37a: {fileID: 1699440275}
     - 5778b2e9e672848fb87504f94129a0a3: {fileID: 0}
     - 3113575dc07264eebacd8442c24b54aa: {fileID: 1699440275}
     - 76682153df4974026bf5cbe30232bcbc: {fileID: 1351221250}
     - 31b5e80f669164e5eb627415c0e05412: {fileID: 1021959162}
+    - 1ab96a4f818ed4e848e8764b92492420: {fileID: 1351221250}
+    - 54a4883a98a6a402998fd26f5f3e3eca: {fileID: 1593044332}
+    - b269fd9e0f99643eaa9f85a0c0e4fc47: {fileID: 1886696065}
     - c52870741587145a7b1fdf0f9ba31ec3: {fileID: 1021959162}
     - 2d6e10c8720414cafa6563c005a9091b: {fileID: 1454586812}
+    - 14778c514ebee4c93846ddf0b3f1549f: {fileID: 2031004884}
     - 58e29afc71a524779836af9ea462f189: {fileID: 1994967309}
     - 1494dbdd7311749a682afaddc9c1831f: {fileID: 1593044332}
     - 4e1b967a5e9334b6d80732241f502f58: {fileID: 1454586812}
     - ec8ca692905c843fc8a7b2214d12cbfa: {fileID: 0}
     - 22d01e67c50984077be96e4ab1313670: {fileID: 0}
     - 9b60621cf5ab34e1ea7c5e61c8b12301: {fileID: 1886696065}
+    - bd3de6dc0fd6d4fe68bd8ccf737b8be3: {fileID: 1021959162}
     - 73eca60beab5a4783a642714ac829827: {fileID: 1886696065}
     - 985347db6d75f4a45b64472647fd99a9: {fileID: 1994967309}
+    - 343522bcfc5ac4eaf90c55fcdc0c132b: {fileID: 1454586812}
 --- !u!4 &168088336
 Transform:
   m_ObjectHideFlags: 0
@@ -17528,7 +17536,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593044330}
   m_LocalRotation: {x: 0.032468345, y: 0.90513057, z: -0.1187458, w: 0.4069201}
-  m_LocalPosition: {x: 10.09, y: 18.06, z: 17.32}
+  m_LocalPosition: {x: 10.09, y: 18.47, z: 17.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4897,6 +4897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1143367059}
   - component: {fileID: 1143367060}
+  - component: {fileID: 1143367061}
   m_Layer: 0
   m_Name: Point Light (2)
   m_TagString: Untagged
@@ -4981,6 +4982,23 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!320 &1143367061
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143367058}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: c9e6a8a03d0684b87a633e5e2edf5914, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1001 &1151111238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6336,6 +6354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1388852645}
+  - component: {fileID: 1388852646}
   m_Layer: 0
   m_Name: Reality LightSystem
   m_TagString: Untagged
@@ -6363,6 +6382,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &1388852646
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388852644}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: c9e6a8a03d0684b87a633e5e2edf5914, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1392210102
 GameObject:
   m_ObjectHideFlags: 0
@@ -7308,6 +7344,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1511918538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1511918540}
+  - component: {fileID: 1511918539}
+  m_Layer: 0
+  m_Name: Timeline2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!320 &1511918539
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511918538}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: c9e6a8a03d0684b87a633e5e2edf5914, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -6845561796890262157, guid: c9e6a8a03d0684b87a633e5e2edf5914, type: 2}
+    value: {fileID: 1926359011}
+  m_ExposedReferences:
+    m_References:
+    - 3097803dc34464271a0029088e716dee: {fileID: 2004822449}
+    - 9ba4f5e2ff7764614a942c9d73ad40e1: {fileID: 769363528}
+    - a1f0fd4742e224f7fb677b9a3b0d51ee: {fileID: 1754191676}
+    - 9fb56dec17a814e7cb841b49b90d0b71: {fileID: 1421630074}
+    - b7c45ea5bc4d6432984e3d515809d1a0: {fileID: 459641353}
+    - 138ea3bd5c1b44f8c9af1696514375fa: {fileID: 1919909352}
+    - 7f95a924e376245e89fa4ad491d138f1: {fileID: 1182819652}
+    - 15639e15b44eb435c896363601ad40d2: {fileID: 325169997}
+    - c7faeb1a8ab7741acbefbf67a1c281a2: {fileID: 710177801}
+    - 7f821649287f34ef6b007a5d652594df: {fileID: 1987147850}
+    - 175f52e78f05b47d282727e6eb7c283c: {fileID: 1360430182}
+--- !u!4 &1511918540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511918538}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1521060431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8013,6 +8111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1648113935}
+  - component: {fileID: 1648113936}
   m_Layer: 0
   m_Name: CameraGroup
   m_TagString: Untagged
@@ -8046,6 +8145,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &1648113936
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648113934}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: c9e6a8a03d0684b87a633e5e2edf5914, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1001 &1676705601
 PrefabInstance:
   m_ObjectHideFlags: 0
