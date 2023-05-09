@@ -23,22 +23,30 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 2.28
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubtractiveShadowColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 0657637449dfba34f84c2e4cf23683b6, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 0
+  m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.21763238, g: 0.21565276, b: 0.20865792, a: 1}
+>>>>>>> 4af43bb6ee49fcca1217cb5d7f2bcdd6d4b9f1dc
+=======
+  m_IndirectSpecularColor: {r: 0.21763238, g: 0.21565276, b: 0.20865792, a: 1}
+>>>>>>> 4af43bb6ee49fcca1217cb5d7f2bcdd6d4b9f1dc
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8072,7 +8080,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1673250653}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 3a48eec5e36c14976b7dede0e717d037, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: c9e6a8a03d0684b87a633e5e2edf5914, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -8082,6 +8090,10 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: -2040550459245313943, guid: 3a48eec5e36c14976b7dede0e717d037, type: 2}
     value: {fileID: 1926359011}
+  - key: {fileID: -2040550459245313943, guid: c9e6a8a03d0684b87a633e5e2edf5914, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -2551613499419629134, guid: c9e6a8a03d0684b87a633e5e2edf5914, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - ec0c9e4027f6b4bae98c255e42aa3b0c: {fileID: 710177801}
