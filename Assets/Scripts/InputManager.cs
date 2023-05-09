@@ -59,7 +59,7 @@ namespace Phantom
             if (ctx.phase == InputActionPhase.Performed && canGamePause)
             {
                 playerMove.Disable();
-                pauseUI.SetActive(true);
+                //pauseUI.SetActive(true);
                 Cursor.lockState = CursorLockMode.Confined;
                 canGamePause = !canGamePause;
             }
@@ -68,7 +68,7 @@ namespace Phantom
                 playerMove.Enable();
                 Cursor.lockState = CursorLockMode.Locked;
                 canGamePause = !canGamePause;
-                pauseUI.SetActive(false);
+                //pauseUI.SetActive(false);
             }
         }
 

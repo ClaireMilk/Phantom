@@ -6,6 +6,7 @@ public class CameraShake : MonoBehaviour
 {
     public Camera seeAirplane;
     public GameObject flyAnim;
+    public GameObject planeBGM;
 
     public void FieldOfView(int see)
     {
@@ -20,6 +21,7 @@ public class CameraShake : MonoBehaviour
         if (see == 1)
         {
             flyAnim.SetActive(true);
+            planeBGM.SetActive(true);
         }
     }
 }

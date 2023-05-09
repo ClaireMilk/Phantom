@@ -48,7 +48,7 @@ public class OpenEyes : MonoBehaviour
     {
         blackimage.DOFade(1,1f);
         
-        Invoke("Jump",2f);
+        Invoke("Jump", 1.0f);
 
     }
     private void Jump()
