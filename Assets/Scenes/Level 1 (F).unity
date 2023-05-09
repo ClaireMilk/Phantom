@@ -1096,86 +1096,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6719897340865883353, guid: 60888ec7db839344c86ed2fe0b334d25, type: 3}
   m_PrefabInstance: {fileID: 81544807}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &85428538
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 85428539}
-  - component: {fileID: 85428541}
-  - component: {fileID: 85428540}
-  m_Layer: 5
-  m_Name: Photo[E]
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &85428539
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85428538}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 569558333}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.00016276042, y: 147.0101}
-  m_SizeDelta: {x: 410.1, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &85428540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85428538}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 40
-    m_Alignment: 1
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: '[E]'
---- !u!222 &85428541
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85428538}
-  m_CullTransparentMesh: 1
 --- !u!4 &86787236 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 439154, guid: e1f712d50b8c7cd4986eaed80890e5d4, type: 3}
@@ -6711,7 +6631,6 @@ RectTransform:
   - {fileID: 716148753}
   - {fileID: 1130073711}
   - {fileID: 1151349736}
-  - {fileID: 85428539}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7114,22 +7033,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.21976304, y: 0.0569069, z: 0.13441122}
   m_Center: {x: 0.045843076, y: 0.016434483, z: 0.050935756}
---- !u!114 &580696397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580696395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfd1a1c6c431d8d4a95b4511744b9429, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  memorySound: {fileID: 1482018722}
-  soundUI: {fileID: 85428540}
-  warBGM: {fileID: 1647715802}
-  camera2: {fileID: 1654682917}
 --- !u!1 &593812073
 GameObject:
   m_ObjectHideFlags: 0
@@ -26985,8 +26888,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6536941728043636793}
-  m_LocalRotation: {x: 0.65154564, y: -0.15445164, z: -0.0011984856, w: -0.74271905}
-  m_LocalPosition: {x: -2.92947, y: -0.36400127, z: 2.5908895}
+  m_LocalRotation: {x: 0.11710825, y: -0.4217066, z: 0.05502833, w: 0.8974526}
+  m_LocalPosition: {x: -1.7626247, y: 4.826, z: 2.005506}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

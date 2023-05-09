@@ -17,6 +17,7 @@ public class OpenEyes : MonoBehaviour
     void Start()
     {
         myanim=GetComponent<Animator>();
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     // Update is called once per frame

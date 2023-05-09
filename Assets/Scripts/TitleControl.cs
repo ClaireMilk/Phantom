@@ -18,6 +18,7 @@ public class TitleControl : MonoBehaviour
         Invoke("ShowTitle", 2f);
         Invoke("Blackout", 9f);
         Invoke("ToMainMenu", 10f);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void ShowTitle()
